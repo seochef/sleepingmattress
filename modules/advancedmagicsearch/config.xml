@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>advancedmagicsearch</name>
+	<displayName><![CDATA[Advanced Magic Search]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Advanced Magic Search for Sleepingmattress!]]></description>
+	<author><![CDATA[B8ne, Alepnc, AntonioCasoria]]></author>
+	<tab><![CDATA[administration]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>
