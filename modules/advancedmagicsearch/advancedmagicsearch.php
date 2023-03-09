@@ -69,6 +69,8 @@ class Advancedmagicsearch extends Module
             $this->registerHook('header') &&
             $this->registerHook('displayBackOfficeHeader') &&
             $this->registerHook('displayHeader');
+
+        $this->buildTabs();
     }
 
     public function uninstall()
@@ -77,8 +79,11 @@ class Advancedmagicsearch extends Module
 
         include(dirname(__FILE__).'/sql/uninstall.php');
 
+        $this->removeTabs();
         return parent::uninstall();
     }
+
+      
 
     /**
      * Load the configuration form
@@ -210,5 +215,30 @@ class Advancedmagicsearch extends Module
     public function hookDisplayHeader()
     {
         /* Place your code here. */
+    }
+
+    private function buildTabs()
+    {
+        $class_name = 'AdminParentModulesSf';
+
+        $tab = new Tab();
+        $tab->active = 1;
+        $tab->class_name = 'AdminAdvancedMagicSearch';
+        $tab->module = $this->name;
+     
+        foreach (Language::getLanguages(true) as $lang) {
+            $tab->name[$lang['id_lang']] = 'Advanced Magic Search';
+        }
+     
+        $tab->id_parent = (int)Tab::getIdFromClassName($class_name);
+        $tab->add();
+    }
+
+    private function removeTabs()
+    {
+        $tab = new Tab((int)Tab::getIdFromClassName('AdminAdvancedMagicSearch'));
+        if($tab->id){
+            $tab->delete();
+        }
     }
 }
