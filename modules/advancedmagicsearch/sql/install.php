@@ -4,7 +4,7 @@
 
     $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'advancedmagicsearch` (
         `id_advancedmagicsearch` int(11) NOT NULL AUTO_INCREMENT,
-        `id_customer` int(11) NOT NULL AUTO_INCREMENT,
+        `id_customer` int(11) NOT NULL,
         `id_domanda` int(4) NOT NULL,
         `id_risposta` int(4) NOT NULL,
         PRIMARY KEY  (`id_advancedmagicsearch`)
