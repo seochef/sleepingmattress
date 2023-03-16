@@ -11,12 +11,6 @@
             'table' => 'answers_link',
             'primary' => 'id_row',
             'fields' => array(
-
-                'id_row' => array(
-                    'type' => self::TYPE_INT,
-                    'required' => true
-                ),
-                
                 'id_answer' => array(
                     'type' => self::TYPE_INT,
                     'required' => true
@@ -41,9 +35,8 @@
         );
 
         public static function getAllRows() {
-            $sql = 'SELECT * FROM ' . TABLE_NAME;
-            $result = sprint($sql, self::TABLE_NAME);
-            return db::getInstance()->executeS($result);
+            $sql = 'SELECT * FROM ' . self::TABLE_NAME;
+            return db::getInstance()->executeS($sql);
         }
 
         public function getIdAnswer() {
@@ -71,11 +64,24 @@
         }
         
         public function setIdPrimario($n_idPrimario){
-            $this->id_primario = $idPrimario;
+            $this->id_primario = $n_idPrimario;
         }
     
         public function setIdValore($n_valore){
             $this->id_valore = $n_valore;
+        }
+
+        private function existRow() {
+            $sql = 'SELECT * FROM ' . self::TABLE_NAME . ' WHERE id_answer = ' . $this->id_answer . ' AND type = "' . $this->type . '" AND id_primario = ' . $this->id_primario . ' AND id_valore = ' . $this->id_valore;
+            return Db::getInstance()->getRow($sql);
+        }
+
+        public function save($null_values = false, $auto_date = true) {
+            if ($this->existRow()) {
+                return false;
+            } else {
+                return parent::save();
+            }
         }
     
     }

@@ -12,13 +12,13 @@
                 '8' => '500/1000 €',
                 '9' => 'Il prezzo è indifferente'
             );
-        }
 
-    function getAnswer($id) {
-        return Answers::$answers[$id];       
-    }
-    
-    function getAllAnswers(){
-        return $answers;
-    }
+            public static function getAnswer($id) {
+                return self::$answers[$id];       
+            }
+            
+            public static function getAllAnswers(){
+                return self::$answers;
+            }
+        }
 ?>
