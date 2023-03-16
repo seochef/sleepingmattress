@@ -7,13 +7,13 @@
             '3' => 'Soffri di allergie?',
             '4' => 'Quanto spenderesti per l acquiato del materasso '
         );
-    }
 
-    function getQuestion($id) {
-        return Questions::$questions[$id];
-    }
-
-    function getAllQuestion(){
-        return $questions;
+        public static function getQuestion($id) {
+            return self::$questions[$id];
+        }
+    
+        public static function getAllQuestion(){
+            return self::$questions;
+        }
     }
 ?>

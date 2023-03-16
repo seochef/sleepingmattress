@@ -44,9 +44,8 @@ class Advancedmagicsearch extends Module
         return parent::install() &&
             $this->registerHook('header') &&
             $this->registerHook('displayBackOfficeHeader') &&
-            $this->registerHook('displayHeader');
-
-        $this->buildTabs();
+            $this->registerHook('displayHeader') &&
+            $this->buildTabs();
     }
 
     public function uninstall()
