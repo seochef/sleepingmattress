@@ -5,7 +5,7 @@
             '1' => 'Preferisci un materasso più morbido e soffice oppure più rigido?',
             '2' => 'Preferisci un letto singolo o un letto matrimoniale?',
             '3' => 'Soffri di allergie?',
-            '4' => 'Quanto spenderesti per l acquiato del materasso '
+            '4' => 'Quanto spenderesti per l\'acquisto del materasso '
         );
 
         public static function getQuestion($id) {

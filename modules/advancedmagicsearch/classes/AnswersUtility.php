@@ -24,9 +24,13 @@
             )
 
         );
-    }
 
-    function getQuestionFull($id){
-        return $answersutility[$id];
-    }   
+        public static function getAllQuestion(){
+            return self::$answersutility;
+        }
+    
+        public static function getQuestionFull($id){
+            return self::$answersutility[$id];
+        } 
+    }  
 ?>
