@@ -1,6 +1,7 @@
 <?php
     require(_PS_MODULE_DIR_.'advancedmagicsearch/classes/AnswersUtility.php');
     require(_PS_MODULE_DIR_.'advancedmagicsearch/classes/Questions.php');
+    require(_PS_MODULE_DIR_.'advancedmagicsearch/classes/Answers.php');
 
     class AdvancedMagicSearchSmarttressModuleFrontController extends ModuleFrontController
     {
@@ -17,10 +18,10 @@
 
         public function initContent()
         {
-            $answers_utility = AnswersUtility::getAllQuestion();
-            $this->context->smarty->assign("answers_utility", $answers_utility);
+            $answersutility = AnswersUtility::getAllQuestion();
+            $this->context->smarty->assign("answersutility", $answersutility);
 
-            $answers = Answers::getAllAnswer();
+            $answers = Answers::getAllAnswers();
             $this->context->smarty->assign("answers", $answers);
 
             $questions = Questions::getAllQuestion();

@@ -1,10 +1,12 @@
 {extends file='page.tpl'}
 {block name='page_content'}
     <form method="post">
-        {foreach from=$questions item = question key = q}
+        {foreach from=$questions item=question key=q}
             <label>{$question}</label><br>
-            <select required>
-            </select><br>
+            {foreach from=$answersutility[$q] key=ai item=answeritem}
+                <input type=radio value={$ai}>{$answers[$answeritem]}<br>
+            {/foreach}
+            <br>
         {/foreach}
         <input type="submit" name="invio" value="Invio">
     </form>
