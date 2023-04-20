@@ -189,7 +189,7 @@ class Advancedmagicsearch extends Module
 
     public function hookDisplayHeader()
     {
-        /* Place your code here. */
+        $this->hookHeader();
     }
 
     private function buildTabs()
