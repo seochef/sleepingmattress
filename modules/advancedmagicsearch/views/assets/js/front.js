@@ -4,9 +4,13 @@ $(document).ready(function() {
     var input_radio_elements = $(form_element).find('input[type="radio"]:checked');
 
     $(input_radio_elements).each(function() {
-        var current_id_label = $(this).attr('data_label_id');
+        initResumeArray(this);
+    });
+
+    function initResumeArray(e) {
+        var current_id_label = $(e).attr('data_label_id');
         var risposta_str = $('#'+current_id_label).text();
-        var id_domanda = $(this).attr('data_label_question_id');
+        var id_domanda = $(e).attr('data_label_question_id');
         var domanda_str = $("#"+id_domanda).text();
 
         let subarray = [];
@@ -16,10 +20,10 @@ $(document).ready(function() {
 
         list_resume[id_domanda] = [];
         list_resume[id_domanda] = subarray;
+    }
 
-    });
-
-    function showResume() {
+    function showResume(event) {
+		event.preventDefault(); 
         var html_var = '<div>';
 
         let lenght_array = list_resume.length;
@@ -31,9 +35,10 @@ $(document).ready(function() {
 
             let domanda = subarray['domanda'];
             let risposta = subarray['risposta'];
-
+			risposta = risposta.replace(/(?:\r\n|\r|\n)/g, '');
+			risposta = risposta.trim();
             html_var += '<h4>'+domanda+'</h4>';
-            html_var += '<p>'+risposta+'</p>';
+            html_var += '<p class="answer_resume_p" style="color:black;">'+risposta+'</p>';
             html_var += '</div>';
         }
 
@@ -42,22 +47,29 @@ $(document).ready(function() {
         $('#resume_container').html(html_var);
         $('#riepilogo').hide();
         $('#invio').fadeIn();
-        $('#indietro').fadeIn();  
+        $('#indietro').fadeIn();
+        $('#input-container').hide();
     }
 
-    function showForm() {
+    function showForm(event) {
+		event.preventDefault();
         $('#resume_container').html('');
         $('#riepilogo').fadeIn();
         $('#invio').hide();
         $('#indietro').hide();
+        $('#input-container').fadeIn();
     }
 
+    $('.checkclass').change(function() {
+        initResumeArray(this);
+    });
+
     $('#riepilogo').click(function() {
-        showResume();
+        showResume(event);
     });
 
     $('#indietro').click(function() {
-        showForm();
+        showForm(event);
     });
 
 });
