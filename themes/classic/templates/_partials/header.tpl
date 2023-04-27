@@ -32,11 +32,11 @@
   <nav class="header-nav">
     <div class="container">
       <div class="row">
-        <div class="hidden-sm-down">
-          <div class="col-md-5 col-xs-12">
+        <div style="margin-left: 51;" class="hidden-sm-down">
+          <div class="col-md-2 col-xs-12">
             {hook h='displayNav1'}
           </div>
-          <div class="col-md-7 right-nav">
+          <div class="col-md-5 right-nav">
               {hook h='displayNav2'}
           </div>
         </div>
@@ -48,7 +48,6 @@
           <div class="float-xs-right" id="_mobile_user_info"></div>
           <div class="top-logo" id="_mobile_logo"></div>
           <div class="clearfix"></div>
-          <h1>CIAO</h1>
         </div>
       </div>
     </div>
@@ -56,7 +55,7 @@
 {/block}
 
 {block name='header_top'}
-  <div class="header-top">
+  <div class="header-top" >
     <div class="container">
        <div class="row">
         <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
@@ -70,7 +69,7 @@
             {/if}
           {/if}
         </div>
-        <div class="header-top-right col-md-10 col-sm-12 position-static">
+         <div style="margin-top: 5px;" class="header-top-right col-md-10 col-sm-12 position-static">
           {hook h='displayTop'}
         </div>
       </div>
