@@ -27,6 +27,9 @@
             $questions = Questions::getAllQuestion();
             $this->context->smarty->assign("questions", $questions);
 
+            $modulelink = $this->context->link->getModuleLink('advancedmagicsearch', 'result');
+            $this->context->smarty->assign("modulelink", $modulelink);
+
             parent::initContent();
             $this->setTemplate('module:advancedmagicsearch/views/templates/front/smarttress.tpl');
         }

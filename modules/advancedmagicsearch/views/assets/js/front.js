@@ -24,7 +24,8 @@ $(document).ready(function() {
 
     function showResume(event) {
 		event.preventDefault(); 
-        var html_var = '<div>';
+        var intestazione = '<h3>Riepilogo Risposte</h3>';
+        var html_var = '<div>' + intestazione;
 
         let lenght_array = list_resume.length;
 
