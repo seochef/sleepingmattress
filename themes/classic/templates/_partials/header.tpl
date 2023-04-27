@@ -48,6 +48,7 @@
           <div class="float-xs-right" id="_mobile_user_info"></div>
           <div class="top-logo" id="_mobile_logo"></div>
           <div class="clearfix"></div>
+          <h1>CIAO</h1>
         </div>
       </div>
     </div>
