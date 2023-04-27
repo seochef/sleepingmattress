@@ -19,4 +19,45 @@ $(document).ready(function() {
 
     });
 
+    function showResume() {
+        var html_var = '<div>';
+
+        let lenght_array = list_resume.length;
+
+        for (var key in list_resume) {
+            let subarray = list_resume[key];
+
+            html_var += '<div>';
+
+            let domanda = subarray['domanda'];
+            let risposta = subarray['risposta'];
+
+            html_var += '<h4>'+domanda+'</h4>';
+            html_var += '<p>'+risposta+'</p>';
+            html_var += '</div>';
+        }
+
+        html_var += '</div>';
+
+        $('#resume_container').html(html_var);
+        $('#riepilogo').hide();
+        $('#invio').fadeIn();
+        $('#indietro').fadeIn();  
+    }
+
+    function showForm() {
+        $('#resume_container').html('');
+        $('#riepilogo').fadeIn();
+        $('#invio').hide();
+        $('#indietro').hide();
+    }
+
+    $('#riepilogo').click(function() {
+        showResume();
+    });
+
+    $('#indietro').click(function() {
+        showForm();
+    });
+
 });
