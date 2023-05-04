@@ -120,6 +120,7 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background: linear-gradient(to right, #3a41a0, #3d406d);
 }
 body {
   margin: 0;
@@ -575,7 +576,7 @@ h6,
   font-family: inherit;
   font-weight: 700;
   line-height: 1.1;
-  color: inherit;
+  color: white;
 }
 h1,
 .h1 {
@@ -6297,6 +6298,9 @@ a.bg-inverse:hover {
 .text-white {
   color: #fff !important;
 }
+.text-black {
+  color: #000 !important;
+}
 .text-muted {
   color: #7a7a7a !important;
 }
@@ -6521,7 +6525,7 @@ label .color:hover,
 .h1,
 .h2,
 .h3 {
-  color: #232323;
+  color: black;
   text-transform: uppercase;
 }
 .h4 {
@@ -6573,7 +6577,7 @@ label .color:hover,
 label,
 .label {
   font-size: 0.875rem;
-  color: #232323;
+  color: #fff;
   text-align: right;
 }
 small.label,
@@ -8458,7 +8462,7 @@ body#checkout
   ul {
   font-size: 1rem;
   color: #fff;
-}
+} 
 .carousel .carousel-item .caption .caption-description h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -10769,14 +10773,14 @@ body#checkout
 }
 #footer {
   padding-top: 2.5rem;
-  background: linear-gradient(to right bottom, blue, darkviolet);
+  background: linear-gradient(to right bottom, #000110, #000330);
 }
 .block-contact {
   font-size: 0.875rem;
   color: #7a7a7a;
 }
 .block-contact .block-contact-title {
-  color: #232323;
+  color: white;
 }
 .block-contact .navbar-toggler .material-icons {
   color: #232323;
@@ -10898,7 +10902,7 @@ body#checkout
   background-image: url(../css/47f13bcaf75af86613bca9721d6e858f.svg);
 }
 #block_myaccount_infos .myaccount-title a {
-  color: #232323;
+  color: white;
 }
 .pinterest {
   background-image: url(../css/33e7446832ac7aa84b959a6ea8efb915.svg);
@@ -11186,7 +11190,7 @@ body#checkout
 .block_newsletter #block-newsletter-label {
   font-size: 1.3125rem;
   line-height: 1.75rem;
-  color: #232323;
+  color: #fff;
 }
 .block_newsletter form .input-wrapper {
   overflow: hidden;
@@ -11297,7 +11301,7 @@ body#checkout
   position: relative;
   z-index: 999;
   color: #7a7a7a;
-  background: #fff;
+  background: #000110;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.11);
 }
 #header .logo {
@@ -11308,7 +11312,7 @@ body#checkout
   margin-bottom: 0;
 }
 #header a {
-  color: #232323;
+  color: #7a7a7a;
 }
 #header a:hover {
   color: #24b9d7;
@@ -11323,6 +11327,7 @@ body#checkout
 #header .header-nav {
   max-height: 50px;
   border-bottom: #f6f6f6 2px solid;
+  background: linear-gradient(to right, #000110, #000330);
 }
 #header .header-nav #menu-icon {
   margin: 0 1rem;
@@ -11380,10 +11385,9 @@ body#checkout
   margin-left: 0.9375rem;
   text-align: center;
   white-space: nowrap;
-  background: #f6f6f6;
 }
 #header .header-nav .blockcart a {
-  color: #7a7a7a;
+  color: #fff;
 }
 #header .header-nav .blockcart a:hover {
   color: #24b9d7;
@@ -11410,7 +11414,7 @@ body#checkout
   margin-left: -0.375rem;
 }
 #header .header-top {
-  padding: 1.25rem 0;
+  padding: 1px;
 }
 #header .header-top > .container {
   position: relative;
@@ -11459,7 +11463,7 @@ body#checkout
 }
 #wrapper {
   padding-top: 1.563rem;
-  background: linear-gradient(to right top, blue, darkviolet);
+  background: white;
 }
 #wrapper .banner {
   display: block;
@@ -11513,4 +11517,20 @@ body#checkout
 }
 #notifications ul {
   margin-bottom: 0;
+}
+
+#js-product-list-header # h1{
+  color: black;
+}
+
+#search_widget {
+  margin-top: 3px ;
+}
+
+#footer p{
+  color: #fff;
+}
+
+#carousel p, #carousel h3 {
+  color: white !important;
 }
